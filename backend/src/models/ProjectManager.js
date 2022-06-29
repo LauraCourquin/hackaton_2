@@ -1,19 +1,19 @@
 const AbstractManager = require("./AbstractManager");
 
 class ProjectManager extends AbstractManager {
-  static table = "item";
+  static table = "project";
 
-  insert(item) {
+  insert(project) {
     return this.connection.query(
       `insert into ${ProjectManager.table} (title) values (?)`,
-      [item.title]
+      [project.title]
     );
   }
 
-  update(item) {
+  update(project) {
     return this.connection.query(
       `update ${ProjectManager.table} set title = ? where id = ?`,
-      [item.title, item.id]
+      [project.title, project.id]
     );
   }
 }
