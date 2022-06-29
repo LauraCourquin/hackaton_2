@@ -15,6 +15,9 @@ router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
 router.get("/actor", ActorController.browse);
+router.get("/actor/:id", ActorController.read);
+
 router.length("/project", ProjectController.browse);
+router.get("/project/:id", ProjectController.read);
 
 module.exports = router;
