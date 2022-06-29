@@ -1,19 +1,19 @@
 const AbstractManager = require("./AbstractManager");
 
 class ActorManager extends AbstractManager {
-  static table = "item";
+  static table = "actor";
 
-  insert(item) {
+  insert(actor) {
     return this.connection.query(
       `insert into ${ActorManager.table} (title) values (?)`,
-      [item.title]
+      [actor.title]
     );
   }
 
-  update(item) {
+  update(actor) {
     return this.connection.query(
       `update ${ActorManager.table} set title = ? where id = ?`,
-      [item.title, item.id]
+      [actor.title, actor.id]
     );
   }
 }
