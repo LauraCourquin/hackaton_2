@@ -12,6 +12,7 @@ export default styled.article`
     flex-direction: column;
     align-items: center;
     margin: 1rem;
+    background-color: #fff;
   }
   .imgCard {
     height: 35%;
@@ -24,8 +25,9 @@ export default styled.article`
     padding: 1rem;
   }
   img {
-    height: 15vh;
-    width: 15vh;
+    box-sizing: content-box;
+    width: 50%;
+    height: 100%;
     border: 2px solid black;
     border-radius: 100%;
   }
@@ -38,12 +40,14 @@ export default styled.article`
     display: block;
     position: absolute;
     bottom: 0;
-    margin-bottom: 2.3rem;
+    margin-bottom: 0.5rem;
   }
   .Cardinfo {
     h3,
     h4 {
       margin: 0;
+      text-align: center;
+      margin: 0.3rem;
     }
   }
   .mail {
@@ -57,7 +61,7 @@ export default styled.article`
     width: 100%;
     height: 30%;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
   }
@@ -66,13 +70,15 @@ export default styled.article`
   li {
     list-style: none;
     text-align: center;
-    padding: 0.7rem;
+    padding: 0.4rem;
+    font-size: 0.8em;
 
     img {
       width: 3rem;
       height: 3rem;
     }
   }
+
   @media screen and (max-width: 700px) {
     .myCard {
       width: 80vw;

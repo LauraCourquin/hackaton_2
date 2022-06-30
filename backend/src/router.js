@@ -16,9 +16,11 @@ router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
 router.get("/actor", ActorController.browse);
+router.get("/actor", ActorController.browse);
 router.get("/actor/:id", ActorController.read);
 
 router.get("/project", ProjectController.browse);
+router.get("/project/all", ProjectController.projectAll);
 router.get("/project/:id", ProjectController.read);
 
 router.get("/search/:id", SearchController.search);
