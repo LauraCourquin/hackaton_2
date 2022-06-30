@@ -12,6 +12,7 @@ export default styled.header`
     font-size: 24px;
     line-height: 29px;
     color: #fff;
+    padding: 2rem 15rem 0 0;
   }
 
   h1 {
@@ -21,5 +22,7 @@ export default styled.header`
     line-height: 58px;
     color: #e79759;
     text-transform: uppercase;
+    font-family: var(--title-font);
+    padding-left: 10rem;
   }
 `;
