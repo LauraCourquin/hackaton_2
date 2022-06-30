@@ -3,8 +3,9 @@ import styled from "styled-components";
 export default styled.header`
   background: #153650;
   border-radius: 30px;
-  width: 70vw;
+  width: 100%;
   height: 20vh;
+  box-sizing: border-box;
   text-align: center;
 
   h2 {
