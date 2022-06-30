@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export default styled.article`
   .myCard {
-    background-color: aquamarine;
     width: 20vw;
     height: 60vh;
     border-radius: 1rem;
@@ -15,12 +14,14 @@ export default styled.article`
     margin: 1rem;
   }
   .imgCard {
-    height: 30%;
+    height: 35%;
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     position: relative;
+    padding: 1rem;
   }
   img {
     height: 15vh;
@@ -37,35 +38,45 @@ export default styled.article`
     display: block;
     position: absolute;
     bottom: 0;
-    margin-bottom: 0.8rem;
+    margin-bottom: 2.3rem;
   }
   .Cardinfo {
-    border: dashed red;
     h3,
     h4 {
       margin: 0;
     }
   }
   .mail {
-    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 20%;
   }
   .info {
+    width: 100%;
+    height: 30%;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     flex-direction: row;
+  }
+  ul {
   }
   li {
     list-style: none;
     text-align: center;
-    margin-block-start: 0em;
-    margin-block-end: 0em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 0px;
+    padding: 0.7rem;
+
     img {
-      width: 70%;
-      height: 70%;
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .myCard {
+      width: 80vw;
+      height: 70vh;
     }
   }
 `;
