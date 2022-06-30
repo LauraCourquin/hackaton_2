@@ -1,12 +1,9 @@
-import Filter from "@components/Filter";
-import React from "react";
-import Card from "@components/Card";
+import Home from "@pages/Home";
 
 export default function App() {
   return (
-    <div className="App">
-      <Filter />
-      <Card />;
+    <div>
+      <Home />
     </div>
   );
 }
