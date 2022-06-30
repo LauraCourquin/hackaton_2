@@ -10,6 +10,8 @@ export default styled.aside`
   flex-direction: column;
   width: 40vw;
   box-sizing: border-box;
+  position: sticky;
+  top: 1.5rem;
 
   button {
     background-color: transparent;
@@ -17,18 +19,18 @@ export default styled.aside`
     box-sizing: border-box;
     border: none;
     width: 80%;
-    align-self: center;
     margin-top: 2rem;
     height: 4rem;
     display: flex;
     align-items: center;
-    justify-content: center;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    margin-left: 2rem;
   }
 
   button:active {
     background: #ffffff;
-    box-shadow: 0px 10px 27px 8px rgba(0, 0, 0, 0.05);
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
     border-radius: 8px;
   }
 
