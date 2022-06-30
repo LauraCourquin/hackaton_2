@@ -7,6 +7,7 @@ export default styled.header`
   height: 20vh;
   box-sizing: border-box;
   text-align: center;
+  margin-top: 2rem;
 
   h2 {
     font-weight: 700;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export default styled.aside`
   border-right: solid black 2px;
+  height: 100%;
   padding-right: 2rem;
   margin-left: 1rem;
   margin-top: 2rem;
