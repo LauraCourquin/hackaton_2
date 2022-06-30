@@ -8,7 +8,7 @@ export default styled.aside`
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  width: 20vw;
+  width: 40vw;
   box-sizing: border-box;
 
   button {

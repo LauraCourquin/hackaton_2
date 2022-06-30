@@ -41,6 +41,7 @@ export default function SideBar() {
         </div>
         Collaborateur
       </button>
+      <div className="wip" />
     </SCardForm>
   );
 }

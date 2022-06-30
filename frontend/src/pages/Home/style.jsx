@@ -5,7 +5,7 @@ export default styled.div`
 
   .backgr {
     background-color: #fff;
-    height: 100vh;
+    height: 100%;
     margin: 4rem;
     width: 94vw;
     border-radius: 4rem;
