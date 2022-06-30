@@ -2,8 +2,6 @@ import styled from "styled-components";
 
 export default styled.div`
   background-color: #183650;
-  height: 100vh;
-  width: 100vw;
   display: flex;
   justify-content: center;
 
