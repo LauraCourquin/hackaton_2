@@ -32,19 +32,19 @@ export default function Card({
           <ul>
             <li>
               <img src={Malette} alt="Poste" />
-              <li>{jobs}</li>
+              <p>{jobs}</p>
             </li>
           </ul>
           <ul>
             <li>
               <img src={Building} alt="Building" />
-              <li>{clientName}</li>
+              <p>{clientName}</p>
             </li>
           </ul>
           <ul>
             <li>
               <img src={Hoclock} alt="Hoclock" />
-              <li> </li>
+              <p>e </p>
             </li>
           </ul>
         </div>
