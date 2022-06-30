@@ -4,7 +4,7 @@ export default styled.div`
   background-color: #183650;
 
   .backgr {
-    background-color: #f0f0f0;
+    background-color: #fff;
     height: 100vh;
     margin: 4rem;
     width: 94vw;
