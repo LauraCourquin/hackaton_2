@@ -1,50 +1,61 @@
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
+import axios from "axios";
 import SFilter from "./style";
-// import { useEffect, useState } from "react";
-// import axios from "axios";
 
 export default function Filter() {
-  // const [filtre, setFiltre] = useState;
+  const [actors, setActors] = useState([]);
+  const [projects, setProjects] = useState([]);
+  const [jobs, setJobs] = useState([]);
+  const [work, setWork] = useState([]);
+  const [lastName, setLastName] = useState([]);
 
-  // useEffect(() => {
-  //   axios.get("http://localhost:5000/actor").then(({ data }) => {
-  //     setFiltre(data);
-  //   });
-  // }, []);
-  // const [actors, setActors] = useState([]);
-  // useEffect(() => {
-  //   axios
-  //     .get(`${import.meta.env.VITE_BACKEND_URL}${"/actor"}`)
-  //     .then(({ data }) => {
-  //       setActors(data).then(() => {});
-  //     });
-  // }, []);
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}${"/actor"}`)
+      .then(({ data }) => {
+        setActors(data);
+        setLastName([...new Set(data.map((actor) => actor.lastname))]);
+        setJobs([...new Set(data.map((actor) => actor.jobs))]);
+      });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}${"/project"}`)
+      .then(({ data }) => {
+        setProjects(data);
+
+        setWork([...new Set(data.map((project) => project.inProject))]);
+      });
+  }, []);
 
   return (
     <SFilter>
       <div>
         <section>
           <h1>FILTRE</h1>
-          {
-            <input type="search" id="site-search" />
-            /* {acteurs
-            .filter((acteur) => acteurs.type.includes("vibe"))
-            .map((acteurs) => (
-              <input
-              name={acteurs.job}
-                type="image"
-                src={acteurs.picture}
-                alt={acteurs.alt}
-                onClick={(event) => {
-                  filterData(event);
-                }}
-                />
-            ))} */
-          }
+          <select>
+            {jobs.map((job) => (
+              <option>{job}</option>
+            ))}
+          </select>
+          <select>
+            <option>Disponible</option>
+            {work.map((project) => (
+              <option>{project}</option>
+            ))}
+          </select>
+          <select>
+            <option>Trier par</option>
+            {lastName.map((lastname) => (
+              <option>{lastname}</option>
+            ))}
+          </select>
         </section>
       </div>
     </SFilter>
   );
 }
-// Récupérer du back :
-// table actor => jobs
-// table project => inProject http://localhost:5000/project
+
+// essayer un actor.jobs === développeur,....
