@@ -1,4 +1,4 @@
-import Card from "@components/Card";
+import CardList from "@components/CardList";
 import Header from "@components/Header";
 import SideBar from "@components/Sidebar";
 import React from "react";
@@ -10,7 +10,7 @@ export default function Home() {
       <div className="backgr">
         <SideBar className="aside" />
         <Header className="header" />
-        <Card className="cardSpace" />
+        <CardList />
       </div>
     </SHome>
   );

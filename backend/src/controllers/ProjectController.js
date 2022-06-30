@@ -13,6 +13,18 @@ class ProjectController {
       });
   };
 
+  static projectAll = (req, res) => {
+    models.project
+      .findAllAll()
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static read = (req, res) => {
     models.project
       .find(req.params.id)

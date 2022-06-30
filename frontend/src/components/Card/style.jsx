@@ -12,6 +12,7 @@ export default styled.article`
     flex-direction: column;
     align-items: center;
     margin: 1rem;
+    background-color: #fff;
   }
   .imgCard {
     height: 35%;
@@ -44,6 +45,8 @@ export default styled.article`
     h3,
     h4 {
       margin: 0;
+      text-align: center;
+      margin: 0.3rem;
     }
   }
   .mail {
