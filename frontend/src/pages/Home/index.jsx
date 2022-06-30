@@ -9,8 +9,10 @@ export default function Home() {
     <SHome>
       <div className="backgr">
         <SideBar className="aside" />
-        <Header className="header" />
-        <CardList />
+        <div className="column">
+          <Header className="header" />
+          <CardList className="cardSpace" />
+        </div>
       </div>
     </SHome>
   );
