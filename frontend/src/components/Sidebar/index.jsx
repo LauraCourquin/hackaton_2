@@ -19,25 +19,25 @@ export default function SideBar() {
       </button>
       <button type="button">
         <div className="svgContainer">
-          <img src={client} alt="home logo" className="shopImg" />
+          <img src={client} alt="home logo" className="shopImg2" />
         </div>
         Client
       </button>
       <button type="button">
         <div className="svgContainer">
-          <img src={partenaire} alt="home logo" className="shopImg" />
+          <img src={partenaire} alt="home logo" className="shopImg2" />
         </div>
         Partenaire Ext
       </button>
       <button type="button">
         <div className="svgContainer">
-          <img src={batiment} alt="home logo" className="shopImg" />
+          <img src={batiment} alt="home logo" className="shopImg2" />
         </div>
         Intervenant
       </button>
       <button type="button">
         <div className="svgContainer">
-          <img src={batiment} alt="home logo" className="shopImg" />
+          <img src={batiment} alt="home logo" className="shopImg2" />
         </div>
         Collaborateur
       </button>
