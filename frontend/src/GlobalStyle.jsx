@@ -11,10 +11,11 @@ const GlobalStyle = createGlobalStyle`
   --h1-color: #E77620
 }
 body {
-  width: 100vw;
-  height: 100vh;
   font-family: var(--police-font);
-  background-color:ar(--main-color) ;
+  background-color:var(--main-color) ;
+  height: 100vh;
 }
+
+
 `;
 export default GlobalStyle;

@@ -1,11 +1,5 @@
-import Header from "@components/Header";
-import SideBar from "@components/Sidebar";
+import Home from "@pages/Home";
 
 export default function App() {
-  return (
-    <>
-      <Header />
-      <SideBar />;
-    </>
-  );
+  return <Home />;
 }

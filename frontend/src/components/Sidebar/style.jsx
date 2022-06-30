@@ -6,16 +6,17 @@ export default styled.aside`
   display: flex;
   flex-direction: column;
   width: 20vw;
-  height: 100vh;
+  box-sizing: border-box;
 
   button {
     background-color: transparent;
     border-radius: 8px;
     box-sizing: border-box;
+    border: none;
     width: 80%;
     align-self: center;
-    margin-top: 1rem;
-    height: auto;
+    margin-top: 2rem;
+    height: 4rem;
     display: flex;
     align-items: center;
     justify-content: center;
