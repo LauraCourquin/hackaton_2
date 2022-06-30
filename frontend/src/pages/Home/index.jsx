@@ -1,4 +1,4 @@
-import Card from "@components/Card";
+import CardList from "@components/CardList";
 import SideBar from "@components/Sidebar";
 import React from "react";
 import SHome from "./style";
@@ -8,8 +8,7 @@ export default function Home() {
     <SHome>
       <div className="backgr">
         <SideBar />
-        <Card />
-        <Card />
+        <CardList />
       </div>
     </SHome>
   );

@@ -1,25 +1,25 @@
 import Malette from "@assets/images/malette.png";
 import Building from "@assets/images/building.png";
 import Hoclock from "@assets/images/hoclock.png";
+import PropTypes from "prop-types";
 import SCard from "./style";
 
-export default function Card() {
+export default function Card({ name, mail, jobs, types, picture }) {
   return (
     <SCard>
       <div className="myCard">
         <div className="imgCard">
-          <img
-            src="https://www.netcost-security.fr/wp-content/uploads/2021/11/1636044306_Lhistoire-de-GigaChad-lultra-masculin-mi-meme-mi-legende-urbaine.jpg"
-            alt=""
-          />
+          <img src={picture} alt="caca" />
           <span className="available" />
         </div>
         <div className="Cardinfo">
-          <h3>toto aez</h3>
-          <h4>colaborateur</h4>
+          <h3>{name}</h3>
+          <h4>
+            {types} / {jobs}
+          </h4>
         </div>
         <div className="mail">
-          <p className>azeaytguyhij@gmail</p>
+          <p>{mail}</p>
         </div>
         <div className="info">
           <ul>
@@ -46,3 +46,13 @@ export default function Card() {
     </SCard>
   );
 }
+
+Card.propTypes = {
+  name: PropTypes.string.isRequired,
+  picture: PropTypes.string.isRequired,
+  mail: PropTypes.string.isRequired,
+  jobs: PropTypes.string.isRequired,
+  types: PropTypes.string.isRequired,
+  // skills: PropTypes.string.isRequired,
+};
+// (name, skills, mail, jobs, types, img

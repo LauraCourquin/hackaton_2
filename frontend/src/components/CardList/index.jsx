@@ -5,6 +5,8 @@ import SCardList from "./style";
 
 export default function CardList() {
   const [actors, setActors] = useState([]);
+  // const [projects, setProjects] = useState([]);
+
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}${"/actor"}`)
@@ -12,6 +14,14 @@ export default function CardList() {
         setActors(data).then(() => {});
       });
   }, []);
+
+  // useEffect(() => {
+  //   axios
+  //     .get(`${import.meta.env.VITE_BACKEND_URL}${"/project"}`)
+  //     .then(({ data }) => {
+  //       setProjects(data).then(() => {});
+  //     });
+  // }, []);
   return (
     <SCardList>
       {actors.map((actor) => {
@@ -19,11 +29,11 @@ export default function CardList() {
           <Card
             key={actor.id}
             name={`${actor.firstname} ${actor.lastname}`}
-            img={actor.picture}
+            picture={actor.picture}
             skills={actor.skills}
-            email={actor.mail}
-            job={actor.jobs}
-            type={actor.type}
+            mail={actor.mail}
+            jobs={actor.jobs}
+            types={actor.types}
           />
         );
       })}
