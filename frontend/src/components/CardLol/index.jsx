@@ -1,9 +1,9 @@
-import Lol from "@components/Lol";
+import Card from "@components/Card";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import SCardList from "./style";
 
-export default function CardLol() {
+export default function CardList() {
   const [actors, setActors] = useState([]);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function CardLol() {
     <SCardList>
       {actors.map((actor) => {
         return (
-          <Lol
+          <Card
             key={actor.id}
             name={`${actor.firstname} ${actor.lastname}`}
             picture={actor.picture}
