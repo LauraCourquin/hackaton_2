@@ -8,8 +8,9 @@ export default styled.div`
   justify-content: center;
 
   .backgr {
+    display: flex;
     background-color: #f0f0f0;
-    height: 86vh;
+    height: auto;
     margin: 4rem;
     width: 94vw;
     border-radius: 4rem;
