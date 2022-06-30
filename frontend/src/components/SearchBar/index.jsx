@@ -1,9 +1,34 @@
-import PropTypes from "prop-types";
-import SSearchInput from "./style";
+// import PropTypes from "prop-types";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-function SearchInput({ hChange, formData }) {
+import SSearch from "./style";
+
+export default function Search() {
+  const [formData, setFormData] = useState({
+    search: "",
+  });
+  const [searchResults, setSearchResults] = useState([]);
+
+  useEffect(() => {
+    if (!formData.search) {
+      setSearchResults([]);
+    } else {
+      axios
+        .get(`${import.meta.env.VITE_BACKEND_URL}/search/:id${formData.search}`)
+        .then(({ data }) => {
+          setSearchResults(data);
+        });
+    }
+  }, [formData]);
+
+  const hChange = (evt) => {
+    const { name, value } = evt.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
-    <SSearchInput>
+    <SSearch>
       <input
         type="text"
         placeholder="Taper votre recherche"
@@ -11,22 +36,29 @@ function SearchInput({ hChange, formData }) {
         name="search"
         onChange={hChange}
       />
-    </SSearchInput>
+      <ul>
+        {searchResults.map((searchResult) => {
+          return (
+            <li>
+              {searchResult.displayName}
+              {`/${searchResult.type}/${searchResult.id}`}
+            </li>
+          );
+        })}
+      </ul>
+    </SSearch>
   );
 }
-
-export default SearchInput;
-
-SearchInput.propTypes = {
-  hChange: PropTypes.func,
-  formData: PropTypes.shape({
-    search: PropTypes.string,
-  }),
-};
-SearchInput.defaultProps = {
-  hChange: () => {},
-  formData: PropTypes.shape({
-    question: "",
-    category: "",
-  }),
-};
+// Search.propTypes = {
+//   hChange: PropTypes.func,
+//   formData: PropTypes.shape({
+//     search: PropTypes.string,
+//   }),
+// };
+// Search.defaultProps = {
+//   hChange: () => {},
+//   formData: PropTypes.shape({
+//     question: "",
+//     category: "",
+//   }),
+// };

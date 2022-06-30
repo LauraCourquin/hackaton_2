@@ -4,6 +4,7 @@ const {
   ItemController,
   ActorController,
   ProjectController,
+  SearchController,
 } = require("./controllers");
 
 const router = express.Router();
@@ -20,4 +21,5 @@ router.get("/actor/:id", ActorController.read);
 router.get("/project", ProjectController.browse);
 router.get("/project/:id", ProjectController.read);
 
+router.get("/search/:id", SearchController.search);
 module.exports = router;
