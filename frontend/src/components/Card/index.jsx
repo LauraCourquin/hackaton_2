@@ -4,19 +4,26 @@ import Hoclock from "@assets/images/hoclock.png";
 import PropTypes from "prop-types";
 import SCard from "./style";
 
-export default function Card({ name, mail, jobs, types, picture }) {
+export default function Card({
+  name,
+  mail,
+  jobs,
+  types,
+  picture,
+  // inProject,
+  // skills
+  clientName,
+}) {
   return (
     <SCard>
       <div className="myCard">
         <div className="imgCard">
-          <img src={picture} alt="caca" />
+          <img src={picture} alt="actor" />
           <span className="available" />
         </div>
         <div className="Cardinfo">
           <h3>{name}</h3>
-          <h4>
-            {types} / {jobs}
-          </h4>
+          <h4>{types}</h4>
         </div>
         <div className="mail">
           <p>{mail}</p>
@@ -24,20 +31,20 @@ export default function Card({ name, mail, jobs, types, picture }) {
         <div className="info">
           <ul>
             <li>
-              <img src={Malette} alt="Malette" />
-              <li>RH</li>
+              <img src={Malette} alt="Poste" />
+              <li>{jobs}</li>
             </li>
           </ul>
           <ul>
             <li>
               <img src={Building} alt="Building" />
-              <li>RH</li>
+              <li>{clientName}</li>
             </li>
           </ul>
           <ul>
             <li>
               <img src={Hoclock} alt="Hoclock" />
-              <li>RH</li>
+              <li> </li>
             </li>
           </ul>
         </div>
@@ -53,6 +60,6 @@ Card.propTypes = {
   mail: PropTypes.string.isRequired,
   jobs: PropTypes.string.isRequired,
   types: PropTypes.string.isRequired,
+  clientName: PropTypes.string.isRequired,
   // skills: PropTypes.string.isRequired,
 };
-// (name, skills, mail, jobs, types, img

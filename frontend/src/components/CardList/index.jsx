@@ -5,23 +5,14 @@ import SCardList from "./style";
 
 export default function CardList() {
   const [actors, setActors] = useState([]);
-  // const [projects, setProjects] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}${"/actor"}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}${"/project/all"}`)
       .then(({ data }) => {
         setActors(data).then(() => {});
       });
   }, []);
-
-  // useEffect(() => {
-  //   axios
-  //     .get(`${import.meta.env.VITE_BACKEND_URL}${"/project"}`)
-  //     .then(({ data }) => {
-  //       setProjects(data).then(() => {});
-  //     });
-  // }, []);
   return (
     <SCardList>
       {actors.map((actor) => {
@@ -34,6 +25,9 @@ export default function CardList() {
             mail={actor.mail}
             jobs={actor.jobs}
             types={actor.types}
+            inProject={actor.inProject}
+            jobName={actor.jobName}
+            clientName={actor.clientName}
           />
         );
       })}
