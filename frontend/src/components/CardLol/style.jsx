@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export default styled.section`
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
 `;

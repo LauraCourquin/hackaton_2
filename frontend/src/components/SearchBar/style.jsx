@@ -1,8 +1,6 @@
 import styled from "styled-components";
 
 export default styled.div`
-  display: flex;
-  justify-content: center;
   input {
     background: #f0f0f0;
     border-radius: 10px;

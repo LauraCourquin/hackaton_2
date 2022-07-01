@@ -53,7 +53,7 @@ export default function Lol({
           <ul>
             <li>
               <img src={Hoclock} alt="Hoclock" />
-              <p>e </p>
+              <p> </p>
             </li>
           </ul>
         </div>
