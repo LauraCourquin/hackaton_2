@@ -10,14 +10,16 @@ export default function Lol({
   jobs,
   types,
   picture,
-  // inProject,
+  inProject,
   // skills
   clientName,
 }) {
   return (
     <SLol>
       <div className="second actor">
-        <span className="available" />
+        <span className={`available ${inProject === 1 ? "ava1" : "ava0"}`}>
+          {inProject}
+        </span>
         <img className="actor-profile-img" src={picture} alt="actor" />
 
         <div className="actor-description-bk" />
@@ -62,5 +64,6 @@ Lol.propTypes = {
   jobs: PropTypes.string.isRequired,
   types: PropTypes.string.isRequired,
   clientName: PropTypes.string.isRequired,
+  inProject: PropTypes.number.isRequired,
   // skills: PropTypes.string.isRequired,
 };

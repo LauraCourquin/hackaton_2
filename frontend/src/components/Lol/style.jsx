@@ -29,7 +29,7 @@ export default styled.article`
   }
 
   .second .actor-description-bk {
-    background-image: linear-gradient(-20deg, #bb7413, #e7d25c);
+    background-image: linear-gradient(-20deg, #153650, #327db6);
     box-shadow: 0px 0px 24px 14px rgba(0, 0, 0, 0.81);
   }
 
@@ -53,12 +53,21 @@ export default styled.article`
     height: 1rem;
     border: 1px solid black;
     border-radius: 100%;
-    background-color: rgb(254, 0, 0);
     display: block;
     margin-bottom: 0.5rem;
     position: absolute;
     top: 3%;
     left: 90%;
+
+    &.ava1 {
+      background-color: rgb(0, 254, 0);
+    }
+    &.ava0 {
+      background-color: rgb(254, 0, 0);
+    }
+  }
+  span {
+    font-size: 0;
   }
   .actor-description {
     position: absolute;

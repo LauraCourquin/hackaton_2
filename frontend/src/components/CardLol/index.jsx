@@ -8,9 +8,9 @@ export default function CardList() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}${"/project/all"}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}${"/actor/all"}`)
       .then(({ data }) => {
-        setActors(data).then(() => {});
+        setActors(data);
       });
   }, []);
   return (
