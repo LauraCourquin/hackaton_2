@@ -1,23 +1,23 @@
-import Lol from "@components/Lol";
+import Card from "@components/Card";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import SCardList from "./style";
 
-export default function CardLol() {
+export default function CardList() {
   const [actors, setActors] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}${"/project/all"}`)
+      .get(`${import.meta.env.VITE_BACKEND_URL}${"/actor/all"}`)
       .then(({ data }) => {
-        setActors(data).then(() => {});
+        setActors(data);
       });
   }, []);
   return (
     <SCardList>
       {actors.map((actor) => {
         return (
-          <Lol
+          <Card
             key={actor.id}
             name={`${actor.firstname} ${actor.lastname}`}
             picture={actor.picture}
