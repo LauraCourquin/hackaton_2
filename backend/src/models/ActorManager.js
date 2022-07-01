@@ -16,6 +16,23 @@ class ActorManager extends AbstractManager {
       [actor.title, actor.id]
     );
   }
+
+  findSearch(search) {
+    return this.connection.query(
+      `
+      SELECT * 
+      FROM 
+        project 
+        INNER JOIN actor ON project.acteur_id = actor.id 
+      where 
+        mail like ?
+        or firstname like ?
+        or lastname like ?
+        
+        `,
+      [`%${search}%`, `%${search}%`, `%${search}%`]
+    );
+  }
 }
 
 module.exports = ActorManager;

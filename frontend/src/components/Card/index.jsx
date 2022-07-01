@@ -5,7 +5,9 @@ import PropTypes from "prop-types";
 import SCard from "./style";
 
 export default function Card({
-  name,
+  firstname,
+  lastname,
+  projectName,
   mail,
   jobs,
   types,
@@ -22,7 +24,9 @@ export default function Card({
           <span className="available" />
         </div>
         <div className="Cardinfo">
-          <h3>{name}</h3>
+          <h1>{firstname}</h1>
+          <h2>{lastname}</h2>
+          <h3>{projectName}</h3>
           <h4>{types}</h4>
         </div>
         <div className="mail">
@@ -55,7 +59,9 @@ export default function Card({
 }
 
 Card.propTypes = {
-  name: PropTypes.string.isRequired,
+  firstname: PropTypes.string.isRequired,
+  lastname: PropTypes.string.isRequired,
+  projectName: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
   mail: PropTypes.string.isRequired,
   jobs: PropTypes.string.isRequired,

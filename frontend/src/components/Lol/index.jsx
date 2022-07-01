@@ -5,6 +5,8 @@ import PropTypes from "prop-types";
 import SLol from "./style";
 
 export default function Lol({
+  firstname,
+  lastname,
   name,
   mail,
   jobs,
@@ -25,6 +27,8 @@ export default function Lol({
         <div className="actor-description-bk" />
 
         <div className="actor-description">
+          <h1>{firstname}</h1>
+          <h2>{lastname}</h2>
           <h3>{name}</h3>
 
           <h4>{types}</h4>
@@ -58,6 +62,8 @@ export default function Lol({
   );
 }
 Lol.propTypes = {
+  firstname: PropTypes.string.isRequired,
+  lastname: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   picture: PropTypes.string.isRequired,
   mail: PropTypes.string.isRequired,
