@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Card from "@components/Card";
+import Lol from "@components/Lol";
 import SSearch from "./style";
 
 export default function Search() {
@@ -37,7 +37,7 @@ export default function Search() {
       <ul>
         {searchResults.map((searchResult) => {
           // eslint-disable-next-line react/jsx-props-no-spreading
-          return <Card key={searchResult.id} {...searchResult} />;
+          return <Lol key={searchResult.id} {...searchResult} />;
         })}
       </ul>
     </SSearch>
