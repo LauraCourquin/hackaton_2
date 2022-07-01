@@ -1,7 +1,7 @@
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import Card from "@components/Card";
 import SSearch from "./style";
 
 export default function Search() {
@@ -11,15 +11,13 @@ export default function Search() {
   const [searchResults, setSearchResults] = useState([]);
 
   useEffect(() => {
-    if (!formData.search) {
-      setSearchResults([]);
-    } else {
-      axios
-        .get(`${import.meta.env.VITE_BACKEND_URL}/search/:id${formData.search}`)
-        .then(({ data }) => {
-          setSearchResults(data);
-        });
-    }
+    axios
+      .get(
+        `${import.meta.env.VITE_BACKEND_URL}/search?needle=${formData.search}`
+      )
+      .then(({ data }) => {
+        setSearchResults(data);
+      });
   }, [formData]);
 
   const hChange = (evt) => {
@@ -38,27 +36,21 @@ export default function Search() {
       />
       <ul>
         {searchResults.map((searchResult) => {
-          return (
-            <li>
-              {searchResult.displayName}
-              {`/${searchResult.type}/${searchResult.id}`}
-            </li>
-          );
+          // eslint-disable-next-line react/jsx-props-no-spreading
+          return <Card key={searchResult.id} {...searchResult} />;
         })}
       </ul>
     </SSearch>
   );
 }
-// Search.propTypes = {
-//   hChange: PropTypes.func,
-//   formData: PropTypes.shape({
-//     search: PropTypes.string,
-//   }),
-// };
-// Search.defaultProps = {
-//   hChange: () => {},
-//   formData: PropTypes.shape({
-//     question: "",
-//     category: "",
-//   }),
-// };
+Search.propTypes = {
+  formData: PropTypes.shape({
+    search: PropTypes.string,
+  }),
+};
+Search.defaultProps = {
+  formData: PropTypes.shape({
+    question: "",
+    category: "",
+  }),
+};

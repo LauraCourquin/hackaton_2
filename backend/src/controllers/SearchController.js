@@ -3,7 +3,7 @@ const models = require("../models");
 class SearchController {
   static search = (req, res) => {
     models.actor
-      .findSearch(req.params.search)
+      .findSearch(req.query.needle)
       .then(([rows]) => {
         res.send(rows);
       })

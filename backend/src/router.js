@@ -20,8 +20,8 @@ router.get("/actor", ActorController.browse);
 router.get("/actor/:id", ActorController.read);
 
 router.get("/project", ProjectController.browse);
-router.get("/project/all", ProjectController.projectAll);
+router.get("/project/all/", ProjectController.projectAll);
 router.get("/project/:id", ProjectController.read);
 
-router.get("/search/:id", SearchController.search);
+router.get("/search", SearchController.search);
 module.exports = router;

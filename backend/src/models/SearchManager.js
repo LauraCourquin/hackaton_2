@@ -1,30 +1,13 @@
-class SearchManager {
-  constructor(connection, table) {
-    this.connection = connection;
-    this.table = table;
-  }
+const AbstractManager = require("./AbstractManager");
 
-  find(id) {
-    return this.connection.query(`select * from  ${this.table} where id = ?`, [
-      id,
-    ]);
-  }
-
-  findAll() {
-    return this.connection.query(`select * from  ${this.table}`);
-  }
+class SearchManager extends AbstractManager {
+  static table = "actor";
 
   findSearch(search) {
     return this.connection.query(
-      `SELECT * FROM project INNER JOIN actor ON project.acteur_id = actor.id where like ?`,
+      `SELECT * FROM project INNER JOIN actor ON project.acteur_id = actor.id where firstname like ?`,
       [`%${search}%`]
     );
-  }
-
-  delete(id) {
-    return this.connection.query(`delete from ${this.table} where id = ?`, [
-      id,
-    ]);
   }
 }
 
